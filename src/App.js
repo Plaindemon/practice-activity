@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './app.css';
+import "./utils/strava";
+import polyline from '@mapbox/polyline'
 
 function App() {
+  const client_id = '77814';
+  const client_secret = 'ba4cf64706994d406df016b09df6d62ee55edaef';
+  const refresh_token = 'e3c3bce7513bb09b9c19bfd2450855830fb0d313';
+
+
+    useEffect(() => {
+    //  console.log('useEffect ran successfully')
+
+
+    },
+      []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Strava Activities</h1>
+      <div className="activity" id="activity-name"></div>
+      <div id="activity-distance"></div>
+      <div id="averageSpeed"></div>
+      <div id="totalTime"></div>
+      <div id="elevationGain"></div>
+
+      <div id="activity-map"></div>
+
     </div>
   );
 }
